@@ -1,0 +1,9 @@
+version: "3.2"
+services:
+  pg-db:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
