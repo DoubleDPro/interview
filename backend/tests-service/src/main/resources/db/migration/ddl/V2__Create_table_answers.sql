@@ -6,7 +6,7 @@
 
 /* Drop Tables */
 
-DROP TABLE IF EXISTS tests.answers CASCADE
+DROP TABLE IF EXISTS tests.answersDto CASCADE
 ;
 
 /* Create Tables */
