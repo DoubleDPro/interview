@@ -4,6 +4,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,6 +28,7 @@ public class TestTaskRestController {
     this.service = service;
   }
 
+  @CrossOrigin
   @PostMapping(
       value = "create",
       consumes = MediaType.APPLICATION_JSON_VALUE,
