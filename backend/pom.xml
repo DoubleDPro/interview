@@ -17,6 +17,7 @@
 
 	<modules>
 		<module>tests-service</module>
-	</modules>
+    <module>quizes-service</module>
+  </modules>
 
 </project>

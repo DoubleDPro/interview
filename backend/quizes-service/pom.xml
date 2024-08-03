@@ -11,10 +11,10 @@
   </parent>
 
   <groupId>ru.usachev.interview.backend</groupId>
-  <artifactId>ru.usachev.interview.backend.tests-service</artifactId>
+  <artifactId>ru.usachev.interview.backend.quizes-service</artifactId>
   <packaging>jar</packaging>
 
-  <name>Interview::Backend::TestsService</name>
+  <name>Interview::Backend::QuizzesService</name>
 
   <build>
     <plugins>
