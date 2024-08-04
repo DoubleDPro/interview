@@ -3,6 +3,7 @@ package ru.usachev.interview.backend.quizzesservice.repositories;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -33,6 +34,7 @@ class QuizTaskRepositoryTest {
     );
   }
 
+  @AfterEach
   void clearDB() {
   jdbcTemplate.execute("TRUNCATE TABLE quizzes.quizzes CASCADE ");
   }

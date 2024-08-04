@@ -17,7 +17,6 @@ public class QuizTaskRestController {
 
   private final QuizTaskService service;
 
-
   public QuizTaskRestController(QuizTaskService service) {
     this.service = service;
   }
