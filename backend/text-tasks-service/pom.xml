@@ -11,10 +11,10 @@
   </parent>
 
   <groupId>ru.usachev.interview.backend</groupId>
-  <artifactId>ru.usachev.interview.backend.test-tasks-service</artifactId>
+  <artifactId>ru.usachev.interview.backend.text-tasks-service</artifactId>
   <packaging>jar</packaging>
 
-  <name>Interview::Backend::TestTasksService</name>
+  <name>Interview::Backend::TextTasksService</name>
 
   <build>
     <plugins>
