@@ -12,7 +12,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import ru.usachev.interview.backend.testsservice.entites.Answer;
 import ru.usachev.interview.backend.testsservice.entites.TestTask;
 
-@SpringBootTest
+@SpringBootTest(properties = {
+    "spring.datasource.url=jdbc:postgresql://localhost:5432/postgres"
+})
 class TestTaskRepositoryTest {
 
   @Autowired

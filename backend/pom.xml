@@ -18,7 +18,7 @@
 	<modules>
 		<module>tests-service</module>
     <module>quizes-service</module>
-    <module>test-tasks-service</module>
+    <module>text-tasks-service</module>
   </modules>
 
 </project>

@@ -11,7 +11,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import ru.usachev.interview.backend.texttasksservice.entities.TextTask;
 import ru.usachev.interview.backend.texttasksservice.repositories.TextTaskRepository;
 
-@SpringBootTest
+@SpringBootTest(properties = {
+    "spring.datasource.url=jdbc:postgresql://localhost:5432/postgres"
+})
 class TextTaskServiceTest {
 
   @Autowired

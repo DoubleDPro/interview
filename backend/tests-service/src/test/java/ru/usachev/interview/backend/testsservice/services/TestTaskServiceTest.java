@@ -15,7 +15,9 @@ import ru.usachev.interview.backend.testsservice.entites.Answer;
 import ru.usachev.interview.backend.testsservice.entites.TestTask;
 import ru.usachev.interview.backend.testsservice.repositories.TestTaskRepository;
 
-@SpringBootTest
+@SpringBootTest(properties = {
+    "spring.datasource.url=jdbc:postgresql://localhost:5432/postgres"
+})
 class TestTaskServiceTest {
 
   @Autowired

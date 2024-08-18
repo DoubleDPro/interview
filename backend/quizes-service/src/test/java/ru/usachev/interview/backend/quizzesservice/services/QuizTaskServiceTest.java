@@ -10,7 +10,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import ru.usachev.interview.backend.quizzesservice.entities.QuizTask;
 import ru.usachev.interview.backend.quizzesservice.repositories.QuizTaskRepository;
 
-@SpringBootTest
+@SpringBootTest(properties = {
+    "spring.datasource.url=jdbc:postgresql://localhost:5432/postgres"
+})
 class QuizTaskServiceTest {
 
   @Autowired
