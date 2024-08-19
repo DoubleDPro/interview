@@ -3,17 +3,31 @@ package ru.usachev.interview.backend.quizzesservice.repositories;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.util.TestPropertyValues;
+import org.springframework.context.ApplicationContextInitializer;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.test.context.ContextConfiguration;
+import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 import ru.usachev.interview.backend.quizzesservice.entities.QuizTask;
 
-@SpringBootTest(properties = {
-    "spring.datasource.url=jdbc:postgresql://localhost:5432/postgres"
-})
+@SpringBootTest
+@ContextConfiguration(initializers = {QuizTaskRepositoryTest.Initializer.class})
+@Testcontainers
 class QuizTaskRepositoryTest {
+
+  @Container
+  public static PostgreSQLContainer postgreSQLContainer = new PostgreSQLContainer("postgres:11.1")
+      .withDatabaseName("integration-tests-db")
+      .withUsername("postgres")
+      .withPassword("postgres");
 
   @Autowired
   private QuizTaskRepository repository;
@@ -22,6 +36,7 @@ class QuizTaskRepositoryTest {
   private JdbcTemplate jdbcTemplate;
 
   @Test
+  @Transactional
   void insert() {
     QuizTask quiz = new QuizTask(
         "content of quiz",
@@ -34,6 +49,21 @@ class QuizTaskRepositoryTest {
         () -> assertEquals(quiz.content(), actualQuiz.content()),
         () -> assertEquals(quiz.answer(), actualQuiz.answer())
     );
+  }
+
+  static class Initializer
+      implements ApplicationContextInitializer<ConfigurableApplicationContext> {
+    public void initialize(ConfigurableApplicationContext configurableApplicationContext) {
+      String[] params = {
+          "spring.datasource.url=jdbc:tc:postgresql:11.1://ignored:1111/" + postgreSQLContainer.getDatabaseName(),
+          "spring.datasource.username=" + postgreSQLContainer.getUsername(),
+          "spring.datasource.password=" + postgreSQLContainer.getPassword(),
+          "spring.flyway.default-schema=quizzes"
+      };
+      TestPropertyValues.of(
+          params
+      ).applyTo(configurableApplicationContext.getEnvironment());
+    }
   }
 
   @AfterEach
