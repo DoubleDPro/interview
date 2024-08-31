@@ -63,7 +63,7 @@
 	</dependencies>
 
 	<modules>
-		<module>backend</module>
+		<module>services</module>
 	</modules>
 
 </project>
