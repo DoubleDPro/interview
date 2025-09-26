@@ -3,17 +3,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
+  <parent>
 		<groupId>ru.usachev</groupId>
 		<artifactId>ru.usachev.interview</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
 
 	<groupId>ru.usachev.interview</groupId>
-	<artifactId>ru.usachev.interview.backend</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>Interview::Backend</name>
-	<packaging>pom</packaging>
+	<artifactId>ru.usachev.interview.services</artifactId>
+	<version>0.0.1</version>
+  <packaging>pom</packaging>
+
+  <name>Interview::Backend</name>
 
 	<modules>
 		<module>tests-service</module>

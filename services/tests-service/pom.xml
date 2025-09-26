@@ -6,15 +6,16 @@
 
   <parent>
     <groupId>ru.usachev.interview</groupId>
-    <artifactId>ru.usachev.interview.backend</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>ru.usachev.interview.services</artifactId>
+    <version>0.0.1</version>
   </parent>
 
-  <groupId>ru.usachev.interview.backend</groupId>
-  <artifactId>ru.usachev.interview.backend.tests-service</artifactId>
+  <groupId>ru.usachev.interview.services</groupId>
+  <artifactId>ru.usachev.interview.services.tests-service</artifactId>
+  <version>0.0.1</version>
   <packaging>jar</packaging>
 
-  <name>Interview::Backend::TestsService</name>
+  <name>Interview::Services::TestsService</name>
 
   <build>
     <plugins>
