@@ -8,20 +8,8 @@ services:
     ports:
       - "5432:5432"
 
-  quizes-service:
-    image: usachev/quizes-service
-    container_name: quizes-service
+  tasks-service:
+    image: usachev/tasks-service
+    container_name: tasks-service
     ports:
       - "8080:8080"
-
-  tests-service:
-    image: usachev/tests-service
-    container_name: tests-service
-    ports:
-      - "8081:8081"
-
-  text-tasks-service:
-    image: usachev/text-tasks-service
-    container_name: text-tasks-service
-    ports:
-      - "8082:8082"

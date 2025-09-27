@@ -64,6 +64,6 @@
 
 	<modules>
 		<module>services</module>
-	</modules>
+  </modules>
 
 </project>

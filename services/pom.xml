@@ -14,12 +14,10 @@
 	<version>0.0.1</version>
   <packaging>pom</packaging>
 
-  <name>Interview::Backend</name>
+  <name>Interview::Services</name>
 
 	<modules>
-		<module>tests-service</module>
-    <module>quizes-service</module>
-    <module>text-tasks-service</module>
-  </modules>
+		<module>tasks</module>
+	</modules>
 
 </project>
